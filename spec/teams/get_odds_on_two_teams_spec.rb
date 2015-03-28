@@ -2,8 +2,10 @@ require 'rails_helper'
 
 feature "A user can pick two teams and get the odds of both of them being in the world series" do
   it "lets a user find the odds of two given teams playing in the world series" do
-    team_1 = FactoryGirl.create(:team)
-    team_2 = FactoryGirl.create(:team)
+    national_league = FactoryGirl.create(:league, name: "National")
+    american_league = FactoryGirl.create(:league, name: "American")
+    team_1 = FactoryGirl.create(:team, league: national_league)
+    team_2 = FactoryGirl.create(:team, league: american_league)
 
     combined_odds = team_1.odds * team_2.odds
 

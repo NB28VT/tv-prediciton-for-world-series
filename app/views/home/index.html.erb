@@ -3,14 +3,14 @@
 
 <%= form_tag("/home", method: "get") do %>
   <%= select("team1", "team_id",
-    Team.all.collect {|p| [ p.name, p.id ] },
-    {prompt: 'Select First Team'},
+    Team.where(league: League.where(name:"National")).collect {|p| [ p.name, p.id ] },
+    {prompt: 'Select National League Team'},
     { class: 'chosen-select'}
   ) %>
 
   <%= select("team2", "team_id",
-    Team.all.collect {|p| [ p.name, p.id ] },
-    {prompt: 'Select Second Team'},
+    Team.where(league: League.where(name:"American")).collect {|p| [ p.name, p.id ] },
+    {prompt: 'Select American League Team'},
     { class: 'chosen-select'}
   ) %>
 <%= submit_tag("Submit") %>
