@@ -18,7 +18,6 @@ feature "A user can pick two teams and get the odds of both of them being in the
 
     select @team_1.name, from: 'team1_team_id'
     select @team_2.name, from: 'team2_team_id'
-    select 4, from: 'game_count_game_count'
     click_on "Submit"
 
     expect(page).to have_content(likely_viewership)

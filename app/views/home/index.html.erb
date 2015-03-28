@@ -14,11 +14,6 @@
     { class: 'chosen-select'}
   ) %>
 
-  <%= select("game_count", "game_count", [4,5,6,7],
-    {prompt: 'Number of Games'},
-    { class: 'chosen-select'}
-  ) %>
-
 <%= submit_tag("Submit") %>
 <% end %>
 
@@ -29,6 +24,9 @@
   <h2>The odds of this series happening are <%= "#{@combined_odds}" %>/1</h2>
 <% end %>
 
-<% if @combined_odds %>
-  <h2>The expected audience for this series is <%= "#{@viewership}" %> million </h2>
-<% end %>
+<h3> Expected viewership (in millions) for: </h3>
+  <h4>Four game series: <%= @four_game_viewership %></h4>
+  <h4>Five game series: <%= @five_game_viewership %></h4>
+  <h4>Six game series: <%= @six_game_viewership %></h4>
+  <h4>Seven game series: <%= @seven_game_viewership %></h4>
+</h3>

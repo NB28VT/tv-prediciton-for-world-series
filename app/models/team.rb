@@ -6,7 +6,6 @@ class Team < ActiveRecord::Base
 
   # Find average between viewerships
   def self.combined_viewership(team_1, team_2, game)
-    game = game[:game_count].to_i
 
     if game == 4
       team_1_viewership = team_1.one_to_four_viewership
@@ -22,6 +21,6 @@ class Team < ActiveRecord::Base
       team_2_viewership = team_2.game_seven_viewership
     end
 
-    ((team_1_viewership) + (team_2_viewership))/2
+    (((team_1_viewership) + (team_2_viewership))/2).round(2)
   end
 end
