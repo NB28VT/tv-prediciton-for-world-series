@@ -46,8 +46,8 @@
   <% end %>
 
 <div class="row">
-  <div id="container" class="large-6-columns" ></div>
-  <div id="stadium_container" class = "large-6-columns"></div>
+  <div id="container" class="large-6 columns" ></div>
+  <div id="stadium_container" class ="large-6 columns"></div>
 </div>
 
 
@@ -65,7 +65,7 @@ $(function () {
           text: 'Source: Wikipedia.org'
       },
       xAxis: {
-          categories: ["Four Game Series", "Five Game Series", "Six Game Series", "Seven Game Sereies"],
+          categories: ["Four Game Series", "Five Game Series", "Six Game Series", "Seven Game Series"],
           title: {
               text: null
           }
@@ -114,20 +114,23 @@ $(function () {
       }]
   });
 });
+</script>
+
+<script>
 
 $(function () {
-  $('#container').highcharts({
+  $('#stadium_container').highcharts({
       chart: {
           type: 'bar'
       },
       title: {
-          text: 'Predicted TV audience (in millions)'
+          text: 'Predicted Total Live Attendence'
       },
       subtitle: {
           text: 'Source: Wikipedia.org'
       },
       xAxis: {
-          categories: ["Four Game Series", "Five Game Series", "Six Game Series", "Seven Game Sereies"],
+          categories: ["Four Game Series", "Five Game Series", "Six Game Series", "Seven Game Series"],
           title: {
               text: null
           }
@@ -135,7 +138,7 @@ $(function () {
       yAxis: {
           min: 0,
           title: {
-              text: 'Population (millions)',
+              text: 'Attendance',
               align: 'high'
           },
           labels: {
@@ -167,7 +170,7 @@ $(function () {
           enabled: false
       },
       series: [{
-          name: 'Viewers',
+          name: 'Attendees',
           data: [<%= @four_game_attendence %>,
             <%= @five_game_attendence %>,
             <%= @six_game_attendence %>,
@@ -176,10 +179,5 @@ $(function () {
       }]
   });
 });
-
-
-
-
-
 
 </script>
