@@ -1,31 +1,31 @@
 team,odds
-Washington Nationals,6
-Los Angeles Dodgers,8
-Boston Red Sox,12
-Chicago Cubs,12
-Los Angeles Angels,12
-St. Louis Cardinals,12
-Detroit Tigers,14
-Seattle Mariners,16
-San Francisco Giants,18
-Toronto Blue Jays,18
-Baltimore Orioles, 20
-Chicago White Sox,20
-Kansas City Royals,25
-New York Yankees,25
-San Diego Padres,25
-Cleveland Indians,28
-Atlanta Braves, 33
-Miami Marlins ,33
-New York Mets,33
-Pittsburgh Pirates,33
-Oakland Athletics,40
-Texas Rangers,40
-Cincinnati Reds ,50
-Milwaukee Brewers,50
-Houston Astros,66
-Tampa Bay Rays ,66
-Arizona Diamondbacks,100
-Colorado Rockies ,100
-Minnesota Twins ,100
-Philadelphia Phillies,100
+Washington Nationals,6,National
+Los Angeles Dodgers,8,National
+Boston Red Sox,12,American
+Chicago Cubs,12,National
+Los Angeles Angels,12,American
+St. Louis Cardinals,12,National
+Detroit Tigers,14,American
+Seattle Mariners,16,American
+San Francisco Giants,18,National
+Toronto Blue Jays,18,American
+Baltimore Orioles, 20,American
+Chicago White Sox,20,American
+Kansas City Royals,25,American
+New York Yankees,25,American
+San Diego Padres,25,National
+Cleveland Indians,28,American
+Atlanta Braves, 33,National
+Miami Marlins,33,National
+New York Mets,33,National
+Pittsburgh Pirates,33,National
+Oakland Athletics,40,American
+Texas Rangers,40,American
+Cincinnati Reds,50,National
+Milwaukee Brewers,50,National
+Houston Astros,66,American
+Tampa Bay Rays,66,American
+Arizona Diamondbacks,100,National
+Colorado Rockies,100,National
+Minnesota Twins,100,American
+Philadelphia Phillies,100,National

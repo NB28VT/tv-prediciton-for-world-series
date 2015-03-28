@@ -17,5 +17,8 @@
 <% end %>
 
 <% if @combined_odds %>
+  <h2>Team one: <%= @team_1.name %></h2>
+  <h2>Team two: <%= @team_2.name %></h2>
+
   <h2>The odds of this series happening are <%= "#{@combined_odds}" %>/1</h2>
 <% end %>
