@@ -1,11 +1,7 @@
 require 'csv'
 
-
-
-
 League.find_or_create_by(name: "National")
 League.find_or_create_by(name: "American")
-
 
 csv_text = File.read('support/odds.csv')
 prediction_csv_text = File.read('support/prediction.csv')
@@ -21,7 +17,6 @@ def check_null(number, prediction_csv, team_count)
     prediction_csv[team_count][number].to_f
   end
 end
-
 
 team_count = 0
 csv.each do |row|

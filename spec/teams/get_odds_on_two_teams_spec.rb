@@ -1,20 +1,28 @@
 require 'rails_helper'
 
 feature "A user can pick two teams and get the odds of both of them being in the world series" do
-  it "lets a user find the odds of two given teams playing in the world series" do
+
+  before(:each) do
     national_league = FactoryGirl.create(:league, name: "National")
     american_league = FactoryGirl.create(:league, name: "American")
-    team_1 = FactoryGirl.create(:team, league: national_league)
-    team_2 = FactoryGirl.create(:team, league: american_league)
+    @team_1 = FactoryGirl.create(:team, league: national_league)
+    @team_2 = FactoryGirl.create(:team, league: american_league)
+  end
 
-    combined_odds = team_1.odds * team_2.odds
-
+  it "returns likely viewership figures" do
+    likely_viewership = (
+      @team_1.one_to_four_viewership +
+      @team_2.one_to_four_viewership
+      )/2
     visit home_index_path
 
-    select team_1.name, from: 'team1_team_id'
-    select team_2.name, from: 'team2_team_id'
+    select @team_1.name, from: 'team1_team_id'
+    select @team_2.name, from: 'team2_team_id'
+    select 4, from: 'game_count_game_count'
     click_on "Submit"
 
-    expect(page).to have_content("#{combined_odds}/1")
+    expect(page).to have_content(likely_viewership)
   end
+
+
 end

@@ -13,6 +13,12 @@
     {prompt: 'Select American League Team'},
     { class: 'chosen-select'}
   ) %>
+
+  <%= select("game_count", "game_count", [4,5,6,7],
+    {prompt: 'Number of Games'},
+    { class: 'chosen-select'}
+  ) %>
+
 <%= submit_tag("Submit") %>
 <% end %>
 
@@ -21,4 +27,8 @@
   <h2>Team two: <%= @team_2.name %></h2>
 
   <h2>The odds of this series happening are <%= "#{@combined_odds}" %>/1</h2>
+<% end %>
+
+<% if @combined_odds %>
+  <h2>The expected audience for this series is <%= "#{@viewership}" %> million </h2>
 <% end %>
