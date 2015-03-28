@@ -31,7 +31,8 @@ csv.each do |row|
   game_five_viewership: check_null(2, prediction_csv, team_count),
   game_six_viewership: check_null(3, prediction_csv, team_count),
   game_seven_viewership: check_null(4, prediction_csv, team_count),
+  attendence: attendence_csv[team_count][1].to_i
   )
-
+  
   team_count += 1
 end
