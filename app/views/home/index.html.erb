@@ -1,13 +1,21 @@
 <h1>Tv Viewership for the World Series</h1>
 
-<%= select("team", "team_id",
-  Team.all.collect {|p| [ p.name, p.id ] },
-  {prompt: 'Select First Team'},
-  { class: 'chosen-select'}
-) %>
 
-<%= select("team", "team_id",
-  Team.all.collect {|p| [ p.name, p.id ] },
-  {prompt: 'Select Second Team'},
-  { class: 'chosen-select'}
-) %>
+<%= form_tag("/home", method: "get") do %>
+  <%= select("team1", "team_id",
+    Team.all.collect {|p| [ p.name, p.id ] },
+    {prompt: 'Select First Team'},
+    { class: 'chosen-select'}
+  ) %>
+
+  <%= select("team2", "team_id",
+    Team.all.collect {|p| [ p.name, p.id ] },
+    {prompt: 'Select Second Team'},
+    { class: 'chosen-select'}
+  ) %>
+<%= submit_tag("Submit") %>
+<% end %>
+
+<% if @combined_odds %>
+  <h2>The odds of this series happening are <%= "#{@combined_odds}" %>/1</h2>
+<% end %>

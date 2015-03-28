@@ -9,9 +9,10 @@ feature "A user can pick two teams and get the odds of both of them being in the
 
     visit home_index_path
 
-    find('#team1Seelect').find(:xpath, team_1.name).select_option
-    find('#team1Seelect').find(:xpath, team_1.name).select_option
+    select team_1.name, from: 'team1_team_id'
+    select team_2.name, from: 'team2_team_id'
+    click_on "Submit"
 
-    expect(page).to_ have_content("#{combined_odds}/1")
+    expect(page).to have_content("#{combined_odds}/1")
   end
 end
