@@ -4,10 +4,12 @@ class HomeController < ApplicationController
         @team_1 = Team.find(params[:team1][:team_id].to_i)
         @team_2 = Team.find(params[:team2][:team_id].to_i)
         @combined_odds = Team.combined_odds(@team_1, @team_2)
-        @four_game_viewership =Team.combined_viewership(@team_1, @team_2, 4)
-        @five_game_viewership =Team.combined_viewership(@team_1, @team_2, 5)
-        @six_game_viewership =Team.combined_viewership(@team_1, @team_2, 6)
-        @seven_game_viewership =Team.combined_viewership(@team_1, @team_2, 7)
+        @four_game_viewership = Team.combined_viewership(@team_1, @team_2, 4)
+        @five_game_viewership = Team.combined_viewership(@team_1, @team_2, 5)
+        @six_game_viewership = Team.combined_viewership(@team_1, @team_2, 6)
+        @seven_game_viewership = Team.combined_viewership(@team_1, @team_2, 7)
+        @team_1_logo = Team.logo_helper(@team_1)
+        @team_2_logo = Team.logo_helper(@team_2)
       end
     end
 end

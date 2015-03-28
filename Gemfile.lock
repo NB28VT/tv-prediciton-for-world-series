@@ -90,6 +90,9 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffi (1.9.6)
+    foundation-rails (5.4.5.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     highcharts-rails (4.1.4)
@@ -221,6 +224,7 @@ DEPENDENCIES
   chosen-rails
   coffee-rails (~> 4.1.0)
   factory_girl_rails
+  foundation-rails
   highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
