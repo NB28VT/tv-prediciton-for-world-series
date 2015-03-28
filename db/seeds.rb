@@ -5,8 +5,11 @@ League.find_or_create_by(name: "American")
 
 csv_text = File.read('support/odds.csv')
 prediction_csv_text = File.read('support/prediction.csv')
+attendence_csv_text = File.read('support/predicted_attendance.csv')
+
 csv = CSV.parse(csv_text, :headers => true)
 prediction_csv = CSV.parse(prediction_csv_text, :headers => true)
+attendence_csv = CSV.parse(attendence_csv_text, :headers => true)
 
 # Check if viewership data is null.
 # If so, take overall average from row 32
@@ -27,7 +30,8 @@ csv.each do |row|
   one_to_four_viewership: check_null(1, prediction_csv, team_count),
   game_five_viewership: check_null(2, prediction_csv, team_count),
   game_six_viewership: check_null(3, prediction_csv, team_count),
-  game_seven_viewership: check_null(4, prediction_csv, team_count)
+  game_seven_viewership: check_null(4, prediction_csv, team_count),
   )
-team_count += 1
+
+  team_count += 1
 end

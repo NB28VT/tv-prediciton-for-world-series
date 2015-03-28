@@ -47,7 +47,7 @@
 
 <div class="row">
   <div id="container" class="large-6-columns" ></div>
-  <div id="container" class = "large-6-columns"></div>
+  <div id="stadium_container" class = "large-6-columns"></div>
 </div>
 
 
@@ -114,6 +114,72 @@ $(function () {
       }]
   });
 });
+
+$(function () {
+  $('#container').highcharts({
+      chart: {
+          type: 'bar'
+      },
+      title: {
+          text: 'Predicted TV audience (in millions)'
+      },
+      subtitle: {
+          text: 'Source: Wikipedia.org'
+      },
+      xAxis: {
+          categories: ["Four Game Series", "Five Game Series", "Six Game Series", "Seven Game Sereies"],
+          title: {
+              text: null
+          }
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Population (millions)',
+              align: 'high'
+          },
+          labels: {
+              overflow: 'justify'
+          }
+      },
+      tooltip: {
+          valueSuffix: ' millions'
+      },
+      plotOptions: {
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -40,
+          y: 100,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+          shadow: true
+      },
+      credits: {
+          enabled: false
+      },
+      series: [{
+          name: 'Viewers',
+          data: [<%= @four_game_attendence %>,
+            <%= @five_game_attendence %>,
+            <%= @six_game_attendence %>,
+            <%= @seven_game_attendence %>
+            ]
+      }]
+  });
+});
+
+
+
+
 
 
 </script>

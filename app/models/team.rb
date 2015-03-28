@@ -30,4 +30,16 @@ class Team < ActiveRecord::Base
 
     (((team_1_viewership) + (team_2_viewership))/2).round(2)
   end
+
+  def self.game_attendence(team_1, team_2, game)
+    if game == 4
+      (team_1.attendence * 2) + (team_1.attendence * 2)
+    elsif game == 5
+      (team_1.attendence * 3) + (team_1.attendence * 2)
+    elsif game == 6
+      (team_1.attendence * 3) + (team_1.attendence * 3)
+    elsif game == 7
+      (team_1.attendence * 4) + (team_1.attendence * 3)
+    end
+  end
 end
