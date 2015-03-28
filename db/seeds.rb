@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+require 'csv'
+
+csv_text = File.read('support/odds.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Team.find_or_create_by(
+  name: row[0],
+  odds: row[1]
+  )
+end
