@@ -1,0 +1,13 @@
+<h1>Tv Viewership for the World Series</h1>
+
+<%= select("team", "team_id",
+  Team.all.collect {|p| [ p.name, p.id ] },
+  {prompt: 'Select First Team'},
+  { class: 'chosen-select'}
+) %>
+
+<%= select("team", "team_id",
+  Team.all.collect {|p| [ p.name, p.id ] },
+  {prompt: 'Select Second Team'},
+  { class: 'chosen-select'}
+) %>
